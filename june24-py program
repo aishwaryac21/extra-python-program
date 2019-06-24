@@ -1,0 +1,60 @@
+##palindrome without reversing
+n=str(input())
+for i in range(0,len(n)):
+    if n[i]==n[len(n)-1]:
+        print("is a palindrome")
+        break
+    else:
+        print("not palindrome")
+        break
+        
+##largest palindromic string:
+str=input()
+n=len(str)
+sind=eind=0
+for i in range(n):
+    for j in range(n-1,i,-1):
+        ind1=i 
+        ind2=j 
+        while ind1<ind2:
+            if str[ind1]!=str[ind2]:
+                break
+            ind1+=1 
+            ind2-=1 
+        if ind1>=ind2:
+            if j-i>eind-sind:
+                sind=i 
+                eind=j 
+print(str[sind:eind+1])   
+
+##selection sort
+a=list(map(int,input().split()))
+for i in range(len(a)):
+    min=i
+    for j in range(i+1,len(a)):
+        if a[j]<a[min]:
+            min=j 
+    a[i],a[min]=a[min],a[i]
+    print(a)
+    
+##bubble sort
+a=list(map(int,input().split()))
+for j in range(len(a)):
+    for i in range(len(a)-1):
+        if a[i]>a[i+1]:
+            a[i],a[i+1]=a[i+1],a[i]
+        print(a) 
+        
+## emp sum:
+a=list(map(int,input().split()))
+count=0
+while True:
+    b=a.index(max(a))
+    for i in range(len(a)):
+        if(i!=b):
+            a[i]+=1
+    count+=1
+    if(len(set(a))==1):
+        print(count)
+        break
+
