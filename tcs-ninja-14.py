@@ -44,4 +44,19 @@ def subst(string):
     
 string=input("")   
 print(subst(string))
+################### OR ###################
+def substring(s):
+    dct={}
+    maxi= cmax = start = 0
+    for index, i in enumerate(s):
+        if i in dct and dct[i]>=start:
+            maxi= max(maxi, cmax)
+            cmax= index-dct[i]
+            start=dct[i]+1
+        else:
+            cmax+=1
+        dct[i]=index
+    return max(maxi, cmax)
+string=input("")
+print(substring(string))
 
