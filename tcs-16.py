@@ -20,3 +20,14 @@ for i in range(l):
         else:
             s.append(i)
 print(c)
+#An integer N is given, find the total number of number 1 appearing in the range 0->N.
+#i/p:13
+#o/p:6(Total number of 1's from 0 to 13 is 6. The occurence of 1 are in the numbers 1,10,11,12,13)
+
+n=int(input())
+count=0
+for i in range(1,n+1):
+    a=str(i)
+    if("1" in a):
+        count+=a.count("1")
+print(count)        
