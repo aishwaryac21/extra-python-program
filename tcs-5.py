@@ -15,7 +15,7 @@ def lenOfLongIncSubArr(arr, n) :
     if (m < l) : 
         m = l 
     return m 
-arr =[int(i) for i in input().split()]
+arr =list(map(int,input().split()))
 #print(arr)
 n = len(arr) 
 print(lenOfLongIncSubArr(arr, n)) 
